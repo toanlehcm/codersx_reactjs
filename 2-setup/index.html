@@ -11,9 +11,17 @@
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 
     <script>
-        const Hello = React.createElement('div', null, 'Hello');
+        const Title = React.createElement('div', {
+            className: 'title'
+        }, 'React docs');
+
+        const Image = React.createElement('img', {
+            src: 'http://via.placeholder.com/640x360'
+        });
+
+        const App = React.createElement('div', null, Title, Image);
         const root = document.getElementById('root');
-        ReactDOM.render(Hello, root);
+        ReactDOM.render(App, root);
     </script>
 </body>
 
