@@ -3,12 +3,13 @@ import './App.css';
 import TodoItem from "./components/TodoItem";
 
 class App extends Component {
-  constructor(props) {
+  constructor() {
     super();
+
     this.todoItems = [
-      "react",
-      "redux",
-      "react native"
+      { title: "react", isComplete: true },
+      { title: "redux" },
+      { title: "react native" }
     ];
   }
 
@@ -16,7 +17,8 @@ class App extends Component {
     return (
       <div className="App">
         {
-          this.todoItems.map((item, index) => <TodoItem key={index} title={item} />)
+          this.todoItems.map((item, index) => 
+          <TodoItem key={index} item={item} />)
         }
       </div>
     );
