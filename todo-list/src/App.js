@@ -7,21 +7,27 @@ class App extends Component {
     super();
 
     this.todoItems = [
-      { title: "react", isComplete: true },
-      { title: "redux" },
-      { title: "react native" }
+      // { title: "react", isComplete: true },
+      // { title: "redux" },
+      // { title: "react native" }
     ];
   }
 
   render() {
-    return (
-      <div className="App">
-        {
-          this.todoItems.map((item, index) => 
-          <TodoItem key={index} item={item} />)
-        }
-      </div>
-    );
+    if (this.todoItems.length > 0) {
+      return (
+        <div className="App">
+          {
+            this.todoItems.map((item, index) => 
+            <TodoItem key={index} item={item} />)
+          }
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">No Item</div>
+      );
+    }
   }
 }
 
